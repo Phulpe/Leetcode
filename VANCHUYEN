@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll=long long;
+long long n,m,s,t,a,b,c;
+
+vector<pair<ll,ll>> adj[100001];
+
+
+void dijkstra(){
+    vector<long long> d(n + 1,1000000000);
+    d[s] = 0;
+    priority_queue< pair<long long , long long> , vector<pair<long long , long long>> , greater<pair<long long , long long>> > Q;
+    Q.push({0,s});
+    while(!Q.empty()){
+        pair<long long , long long> top = Q.top(); Q.pop();
+        long long u = top.second , kc = top.first;
+        if(kc > d[u]) continue;
+        for(auto z : aa[u]){
+            long long v = z.first;
+            long long w = z.second;
+            if(d[v] > d[u] + w){
+                d[v] = d[u] + w;
+                Q.push({d[v] , v});
+            }
+        }
+    }
+    cout << d[t];
+}
+
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("VANCHUYEN.inp","r",stdin);
+    freopen("VANCHUYEN.out","w",stdout);
+    cin >> n >> m >> s >> t;
+    for(long long i = 1 ; i <= m ; i++){
+        cin >> a >> b >> c;
+        aa[a].push_back({b,c});
+        aa[b].push_back({a,c});
+    }
+    dijkstra();
+    return 0;
+}
