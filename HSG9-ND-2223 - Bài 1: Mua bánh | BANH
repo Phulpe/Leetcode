@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
+    freopen("banh.INP","r",stdin);
+    freopen("banh.OUT","w",stdout);
+    int n,m,k;
+    ll total=0;
+    cin>>n>>m>>k;
+    if(n>=k){
+        total=0.8*m*n;
+    }else
+        total=min(n*m,k*m*80/100);
+    cout<<total;
+    return 0;
+}
