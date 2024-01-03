@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<long long> f(10000000,0);
+
+void sieve(long long n){
+    for(int i=1;i*2<=n;i++){
+        for(int j=2;i*j<=n;j++){
+            f[i*j]+=i;
+        }
+    }
+}
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("SODACBIET.inp","r",stdin);
+    freopen("SODACBIET.out","w",stdout);
+    long long n,a,b,c,k;
+    cin>>a>>b;
+    sieve(b);
+    int d=0;
+    for(int i=a;i<=b;i++){
+        if(f[i]>i)
+            d++;
+    }
+    cout<<d;
+    return 0;
+}
