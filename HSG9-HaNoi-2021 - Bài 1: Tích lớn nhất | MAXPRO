@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+using namespace std;
+
+ll CongVinh_mult(ll a,ll b,ll m){
+    if(b==0){
+        return 0;
+    }
+    ll t=CongVinh_mult(a,b/2,m)%m;
+    if(b%2==1){
+        return((t+t)%m+a%m)%m;
+    }else
+        return (t+t)%m;
+}
+ll a[4],m,res;
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("maxpro.inp","r",stdin);
+    freopen("maxpro.out","w",stdout);
+    cin>>a[0]>>a[1]>>a[2]>>m;
+    sort(a,a+3);
+    if(a[1]>0){
+        res=CongVinh_mult(a[2],a[1],m);
+    }else
+    if(a[1]<0){
+        res=CongVinh_mult(abs(a[0]),abs(a[1]),m);
+    }
+    cout<<res;
+    return 0;
+}
