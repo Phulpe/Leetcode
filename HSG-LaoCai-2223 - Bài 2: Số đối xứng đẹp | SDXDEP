@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+
+using ll = long long;
+using namespace std;
+
+ll a,b;
+vector <bool> f(10000005,1);
+vector <ll> l;
+int d=0;
+void sieve(ll n){
+    f[0]=f[1]=0;
+    for(int i=2;i*i<=n;i++)
+        if(f[i])
+            for(int j=i*i;j<=n;j+=i)
+                f[j]=0;
+    for(int i=2;i<=n;i++){
+        if(f[i]==1)
+            l.push_back(i);
+    }
+
+}
+void solve(){
+    for(int i=a;i<=b;i++){
+        if(f[i]==0){
+            string s=to_string(i);
+            string t=s;
+            reverse(s.begin(),s.end());
+            if(s==t){
+                int check=0;
+                bool flag=0;
+                for(int j=1;j<=sqrt(i);j++){
+                    if((i%j==0)&&(j!=i/j))
+                        if(f[j])
+                            check++;
+                    if((i%(i/j)==0)&&(j!=i/j))
+                        if(f[i/j])
+                            check++;
+                    if(check==3){
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==1)
+                    d++;
+            }
+        }
+    }
+}
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("SDXDEP.inp","r",stdin);
+    freopen("SDXDEP.out","w",stdout);
+    cin>>a>>b;
+    sieve(b);
+    solve();
+    cout<<d;
+    return 0;
+}
