@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+ll n;
+vector<ll> a;
+vector<bool> f(10000005,1);
+deque<ll> res;
+void sieve(ll n){
+    f[1]=f[0]=0;
+    for(ll i=2;i*i<=n;i++){
+        if(f[i]){
+            for(ll j=i*i;j<=n;j+=i){
+                f[j]=0;
+            }
+        }
+    }
+}
+bool cmp(ll x,ll y){
+    return x>y;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
+    freopen("trongcay.INP","r",stdin);
+    freopen("trongcay.OUT","w",stdout);
+    sieve(10000005);
+    cin>>n;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        if(f[x]){
+            a.push_back(x);
+        }
+    }
+    if(!a.empty()){
+        sort(a.begin(),a.end(),cmp);
+        for(int i=0;i<a.size();i++){
+            if(i%2!=0){
+                res.push_back(a[i]);
+            }else{
+                res.push_front(a[i]);
+            }
+        }
+        while(!res.empty()){
+            cout<<res.back()<<" ";
+            res.pop_back();
+        }
+    }else{
+        cout<<-1;
+    }
+
+    return 0;
+}
