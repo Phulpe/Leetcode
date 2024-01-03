@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+using namespace std;
+
+ll n,MAX=-INT_MAX,d=0;
+char x;
+vector<ll> b;
+vector<ll> s(10005,0);
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("vote.inp","r",stdin);
+    freopen("vote.out","w",stdout);
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            cin>>x;
+            if(x=='X'){
+                s[j]++;
+            }
+        }
+    }
+    for(int i=1;i<=n;i++){
+        MAX=max(MAX,s[i]);
+    }
+    for(int i=1;i<=n;i++){
+        if(s[i]==MAX){
+            d++;
+            b.push_back(i);
+        }
+    }
+    cout<<d<<" "<<MAX<<endl;
+    for(int i=0;i<d;i++){
+        cout<<b[i]<<" ";
+    }
+    return 0;
+}
