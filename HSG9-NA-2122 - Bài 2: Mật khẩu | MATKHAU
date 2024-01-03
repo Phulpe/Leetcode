@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main(){
+    cin.tie(0);
+    cout.tie(0);
+    ios_base::sync_with_stdio(0);
+    freopen("MATKHAU.inp","r",stdin);
+    freopen("MATKHAU.out","w",stdout);
+    int n;
+    string s;
+    queue<char> res;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>s;
+        cin.ignore();
+        vector<int>a(105,0);
+        for(int j=0;j<s.length();j++){
+            a[s[j]]++;
+        }
+        for(int j=65;j<=90;j++){
+            if(a[j]==1){
+                res.push(char(j));
+            }
+        }
+    }
+    while(!res.empty()){
+        cout<<res.front();
+        res.pop();
+    }
+    return 0;
+}
