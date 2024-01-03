@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using ll = long long;
+using namespace std;
+
+vector <ll> a(3*1e6+5);
+vector <int> l(3*1e6+5,0);
+ll n,k;
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("cappt.inp","r",stdin);
+    freopen("cappt.out","w",stdout);
+    cin>>n>>k;
+    ll MAX=-1e9,MIN=1e9;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        l[a[i]]++;
+    }
+    int d=0;
+    for(int i=0;i<n;i++){
+        l[a[i]]--;
+        if(k-a[i]>=0)
+            d += l[k-a[i]];
+    }
+    cout<<d;
+    return 0;
+}
