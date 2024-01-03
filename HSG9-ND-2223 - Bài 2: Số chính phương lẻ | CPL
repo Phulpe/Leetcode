@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
+    freopen("cpl.INP","r",stdin);
+    freopen("cpl.OUT","w",stdout);
+    ll n;
+    ll i=0,d=0;;
+    cin>>n;
+    ll total=0;
+    unsigned ll res=0;
+    while(total<n){
+        i++;
+        total=i*i;
+        if(total<=n)
+            if(total%2==1){
+            d++;
+            res+=total;
+        }
+    }
+    cout<<d<<"\n";
+    cout<<res;
+    return 0;
+}
