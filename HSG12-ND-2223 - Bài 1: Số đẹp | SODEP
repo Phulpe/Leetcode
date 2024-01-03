@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+
+using ll = long long;
+using namespace std;
+
+ll sum(ll t){
+    ll total=0;
+    while(t>0){
+        total+=t%10;
+        t/=10;
+    }
+    return total;
+}
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("sodep.inp","r",stdin);
+    freopen("sodep.out","w",stdout);
+
+    ll n;
+    cin>>n;
+    if(sum(n)%10==9){
+        cout<<1;
+    }else
+        cout<<0;
+
+    return 0;
+}
