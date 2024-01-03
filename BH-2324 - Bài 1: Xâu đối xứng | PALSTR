@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int n;
+ll t;
+string s,l;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
+    freopen("PALSTR.INP","r",stdin);
+    freopen("PALSTR.OUT","w",stdout);
+    cin>>n;
+    cin.ignore();
+    getline(cin,s);
+    cin>>t;
+    for(ll i=0;i<t;i++){
+        int x,y;
+        cin>>x>>y;
+        l="";
+        copy(s.begin()+x-1,s.end()-(s.length()-y),back_inserter(l));
+        string m=l;
+        reverse(l.begin(),l.end());
+        if(m==l){
+            cout<<"YES"<<"\n";
+        }else{
+            cout<<"NO"<<"\n";
+        }
+    }
+    return 0;
+}
