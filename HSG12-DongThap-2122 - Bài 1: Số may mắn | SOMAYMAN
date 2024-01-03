@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
+    freopen("somayman.INP","r",stdin);
+    freopen("somayman.OUT","w",stdout);
+//    vector<int>a(1000001,0);
+    map<int,int>a;
+    int n,t;
+    cin>>n>>t;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        a[x]++;
+    }
+    for(int i=0;i<t;i++){
+        int x;
+        cin>>x;
+        cout<<a[x]<<"\n";
+    }
+
+    return 0;
+}
