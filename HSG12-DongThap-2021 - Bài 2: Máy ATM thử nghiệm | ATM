@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+ll n,m,d=0;
+ll total=0;
+vector<ll> a,s;
+vector<ll> res;
+void backtracking(ll k){
+    if(k>n-1){
+        return;
+    }
+        for(int j=0;j<=1;j++){
+            if(j==1)
+                total-=a[k];
+            else
+                total+=a[k];
+            if(total>0)
+                res.push_back(total);
+            backtracking(k+1);
+        }
+}
+void solve(){
+    if(n==1){
+        for(int i=0;i<m;i++){
+            if(a[0]==s[i]){
+                d++;
+            }
+        }
+    }else
+    if(n<=20){
+        backtracking(0);
+        sort(res.begin(),res.end());
+        for(int i=0;i<m;i++){
+            bool flag=binary_search(res.begin(),res.end(),s[i]);
+            if(flag){
+                d++;
+            }
+        }
+    }
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cout.tie(NULL);
+    cin.tie(NULL);
+    freopen("atm.INP","r",stdin);
+    freopen("atm.OUT","w",stdout);
+    cin>>n>>m;
+    for(int i=0;i<n;i++){
+        ll x;
+        cin>>x;
+        a.push_back(x);
+    }
+    for(int i=0;i<m;i++){
+        ll x;
+        cin>>x;
+        s.push_back(x);
+    }
+    solve();
+//    for(int i=0;i<res.size();i++){
+//        cout<<res[i]<<" ";
+//    }
+    cout<<d;
+    return 0;
+}
