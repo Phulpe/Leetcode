@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("TAOXAU.inp","r",stdin);
+    freopen("TAOXAU.out","w",stdout);
+
+    string s;
+    getline(cin,s);
+    deque<char> y;
+    y.push_front(s[0]);
+    for(int i=1;i<s.length();i++){
+        if(i%2!=0)
+            y.push_back(s[i]);
+        else
+            y.push_front(s[i]);
+
+    }
+    if(y.size()%2!=1){
+        while(!y.empty()){
+            cout<<y.back();
+            y.pop_back();
+        }
+    }
+    else{
+        while(!y.empty()){
+            cout<<y.front();
+            y.pop_front();
+        }
+    }
+    return 0;
+}
