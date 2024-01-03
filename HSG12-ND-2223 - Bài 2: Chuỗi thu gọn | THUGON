@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+using ll = long long;
+using namespace std;
+
+string s,res;
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("THUGON.inp","r",stdin);
+    freopen("THUGON.out","w",stdout);
+
+    while(cin>>s){
+        //cin>>s;
+        cin.ignore();
+        int d=0;
+        char last=s[0];
+        for(int i=1;i<=s.length();i++){
+            if(s[i]==last){
+                d++;
+            }else
+            if((s[i]!=last)||(i==s.length())){
+                d++;
+                if(d>1)
+                    cout<<d<<last;
+                else
+                    cout<<last;
+                d=0;
+                last=s[i];
+            }
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
