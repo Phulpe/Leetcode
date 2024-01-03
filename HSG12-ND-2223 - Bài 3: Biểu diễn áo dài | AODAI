@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+#define ll long long
+
+using namespace std;
+
+ll n,dem=0;;
+vector<ll> a(10005),b(7,0);
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("aodai.inp","r",stdin);
+    freopen("aodai.out","w",stdout);
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>a[i];
+        b[a[i]]++;
+    }
+    dem+=b[4];
+    ll mn=min(b[1],b[3]);
+    b[1]-=mn;
+    b[3]-=mn;
+    dem+=mn;
+    dem+=b[3];
+    dem+=b[2]/2;
+    b[2]%=2;
+    if(b[2]==1){
+        dem++;
+        if(b[1]>=2){
+            b[1]-=2;
+        }else
+            b[1]=0;
+    }
+    dem+=b[1]/4;
+    b[1]%=4;
+    if(b[1]>0){
+        dem+=1;
+    }
+    cout<<dem;
+    return 0;
+}
