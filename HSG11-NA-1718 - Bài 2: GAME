@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define fi first
+#define se second
+#define el "\n"
+
+using namespace std;
+
+int n;
+vector<ll> a;
+vector<ll> res;
+bool check(ll x,ll k){
+    for(int i=1;i<n;i++){
+        if(a[i]%x!=k){
+            return 0;
+        }
+    }
+    return 1;
+}
+void solve(){
+    int d=a[n-1]-a[0];
+    for(ll i=1;i*i<=d;i++){
+            if(d%i==0){
+                ll tmp=d/i;
+                if(i!=1){
+                    bool flag = check(i,a[0]%i);
+                    if(flag==1){
+                        res.push_back(i);
+                    }
+                }
+                if(tmp!=i){
+                    bool flag=check(tmp,a[0]%tmp);
+                    if(flag==1){
+                        res.push_back(tmp);
+                    }
+                }
+            }
+    }
+}
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    freopen("game.inp","r",stdin);
+    freopen("game.out","w",stdout);
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        ll x;
+        cin>>x;
+        a.push_back(x);
+    }
+    sort(a.begin(),a.end());
+    solve();
+    sort(res.begin(),res.end());
+    for(ll i=0;i<res.size();i++){
+        cout<<res[i]<<" ";
+    }
+    return 0;
+}
