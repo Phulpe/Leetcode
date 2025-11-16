@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Du lịch Nam Định</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #006699; color: white; padding: 20px; text-align: center; }
+        nav { text-align: center; background: #004d66; padding: 10px; }
+        nav a { color: white; margin: 15px; text-decoration: none; font-weight: bold; }
+        section { background: white; margin: 20px; padding: 20px; border-radius: 8px; }
+        footer { text-align: center; background: #333; padding: 15px; color: white; margin-top: 30px; }
+        .place img { width: 100%; max-width: 500px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Khám phá Du lịch Nam Định</h1>
+        <p>Đất học – Đất phát tích – Văn hoá – Tâm linh – Ẩm thực đặc sắc</p>
+    </header>
+
+    <nav>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#thamquan">Danh lam thắng cảnh</a>
+        <a href="#amthuc">Ẩm thực</a>
+        <a href="#lienhe">Liên hệ</a>
+    </nav>
+
+    <section id="gioithieu">
+        <h2>Giới thiệu về Nam Định</h2>
+        <p>Nam Định là vùng đất giàu truyền thống văn hoá, nổi tiếng với Phủ Dầy – trung tâm của tín ngưỡng thờ Mẫu, biển Thịnh Long hiền hòa, làng nghề truyền thống và nhiều di tích lịch sử lâu đời.</p>
+        <img src="https://baonamdinh.vn/file/e7837c02816d130b0181a995d7ad7e96/dataimages/202006/original/images1325022_1.jpg">
+    </section>
+
+    <section id="thamquan">
+        <h2>Danh lam thắng cảnh ở Nam Định</h2>
+
+        <div class="place">
+            <h3>✔ Phủ Dầy – Trung tâm tín ngưỡng thờ Mẫu</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/LeHoiPhuDay.jpg">
+            <p>Phủ Dầy thuộc huyện Vụ Bản, là điểm du lịch tâm linh nổi tiếng nhất miền Bắc.</p>
+        </div>
+        <br>
+        <div class="place">
+            <h3>✔ Nhà thờ Chính tòa Bùi Chu</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUKjTAVQB6Ls43cZDglmF_NzLbZFB_5g-_8w&s" alt="Nhà thờ Bùi Chu">
+            <p>Công trình Công giáo cổ kính mang kiến trúc Gothic độc đáo, là biểu tượng của giáo phận Bùi Chu.</p>
+        </div>
+        <br>
+        <div class="place">
+            <h3>✔ Biển Thịnh Long</h3>
+            <img src="https://dulichokela.com/wp-content/uploads/2024/03/bien-thinh-long-nam-dinh.jpg" alt="Biển Thịnh Long">
+            <p>Bãi biển đẹp, yên bình, rất phù hợp du lịch nghỉ dưỡng cuối tuần.</p>
+        </div>
+    </section>
+
+    <section id="amthuc">
+        <h2>Ẩm thực Nam Định</h2>
+        <ul>
+            <li>Phở bò Nam Định – đặc sản trứ danh</li>
+            <li>Bánh xíu páo – món ăn vặt nổi tiếng thành Nam</li>
+            <li>Kẹo lạc Hải Hậu – ngọt bùi truyền thống</li>
+            <li>Bún đũa Thành Nam – sợi to, nước dùng đậm đà</li>
+        </ul>
+    </section>
+
+    <section id="lienhe">
+        <h2>Liên hệ tư vấn du lịch</h2>
+        <form>
+            <label>Họ và tên:</label><br>
+            <input type="text" style="width: 100%; padding: 8px;"><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" style="width: 100%; padding: 8px;"><br><br>
+
+            <label>Nội dung cần tư vấn:</label><br>
+            <textarea style="width: 100%; height: 120px; padding: 8px;"></textarea><br><br>
+
+            <button type="submit" style="padding: 10px 20px; background: #006699; color: white; border: none; border-radius: 6px; cursor: pointer;">Gửi</button>
+        </form>
+    </section>
+
+    <footer>
+        © 2025 – Website quảng bá du lịch Nam Định
+    </footer>
+</body>
+</html>
